@@ -1,4 +1,3 @@
-
 export default {
   mode: 'universal',
   /*
@@ -12,7 +11,8 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap' }
     ]
   },
   /*
@@ -45,8 +45,15 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/prismic'
   ],
+  prismic: {
+    // TODO: Figure out dotenv for this.
+    endpoint: 'https://nfrostdev.cdn.prismic.io/api/v2',
+    linkResolver: '@/plugins/link-resolver',
+    htmlSerializer: '@/plugins/html-serializer',
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

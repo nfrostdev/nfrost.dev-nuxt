@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1 class="sr-only">Portfolio</h1>
-    <project-link v-for="project in projects" :key="project.id" :project="project"/>
+    <div class="projects">
+      <project-link v-for="project in projects" :key="project.id" :project="project"/>
+    </div>
   </div>
 </template>
 
@@ -20,7 +22,7 @@
           $prismic.predicates.at('document.type', 'project'),
           {
             fetch: ['project.title', 'project.client', 'project.technologies', 'project.images'],
-            fetchLinks: ['client.name']
+            fetchLinks: ['client.name', 'technology.title', 'technology.url']
           }
         )).results
         return {
@@ -34,5 +36,7 @@
 </script>
 
 <style lang="scss">
-
+  .projects {
+    @apply grid justify-center items-center px-8;
+  }
 </style>

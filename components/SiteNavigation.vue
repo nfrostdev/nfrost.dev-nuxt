@@ -1,11 +1,11 @@
 <template>
   <nav aria-label="Primary" class="nav">
-    <div class="nav__wrapper">
+    <div class="nav__wrapper nf-shadow">
       <nuxt-link to="/" class="nav__link">
         <font-awesome-icon icon="layer-group"/>
         <div>Portfolio</div>
       </nuxt-link>
-      <a :href="resume.url" target="_blank" rel="noopener noreferrer" class="nav__link">
+      <a v-if="!$fetchState.pending" :href="resume.url" target="_blank" rel="noopener noreferrer" class="nav__link">
         <font-awesome-icon icon="file-alt"/>
         <div>Resume</div>
       </a>
@@ -32,16 +32,17 @@
     },
     async fetch() {
       try {
+        // TypeScript doesn't understand what the hell is going on with the global Prismic object.
+        // @ts-ignore
         await this.$prismic.api.getSingle('resume')
-          .then((response: { results: null }) => {
+          .then((response: { data: { document: null } }) => {
             this.resume = response.data.document;
           })
       } catch (e) {
         console.log(e)
       }
     },
-    fetchOnServer: true,
-    fetchDelay: 500
+    fetchOnServer: true
   })
 </script>
 
@@ -55,7 +56,6 @@
 
     &__wrapper {
       @apply grid grid-cols-4 rounded;
-      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05), 0 0 0.25rem rgba(0, 0, 0, 0.05);
     }
 
     &__link {

@@ -24,4 +24,8 @@
     font-family: 'Titillium Web', sans-serif;
     @apply font-light;
   }
+
+  .nf-shadow {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05), 0 0 0.25rem rgba(0, 0, 0, 0.05);
+  }
 </style>

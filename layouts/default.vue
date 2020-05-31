@@ -22,10 +22,10 @@
 <style lang="scss">
   html {
     font-family: 'Titillium Web', sans-serif;
-    @apply font-light;
+    @apply font-light bg-gray-200;
 
     @media(prefers-color-scheme: dark) {
-      @apply bg-gray-900 text-gray-200;
+      @apply bg-gray-900 text-gray-100;
     }
   }
 

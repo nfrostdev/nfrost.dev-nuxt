@@ -29,7 +29,7 @@
     fill: #003DA5;
 
     @media (prefers-color-scheme: dark) {
-      fill: #edf2f7;
+      fill: #f7fafc;
     }
 
     @media(min-width: 48em) {

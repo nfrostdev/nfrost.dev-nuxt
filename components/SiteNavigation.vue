@@ -59,10 +59,10 @@
     }
 
     &__link {
-      @apply flex flex-col justify-center items-center leading-none transition duration-200 ease-in-out p-3;
+      @apply flex flex-col justify-center items-center bg-white leading-none transition duration-200 ease-in-out p-3;
 
       @media(prefers-color-scheme: dark) {
-        @apply bg-gray-800;
+        @apply bg-gray-700;
       }
 
       &:first-child {

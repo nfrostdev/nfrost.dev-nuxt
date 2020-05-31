@@ -112,7 +112,7 @@
       }
 
       @media(prefers-color-scheme: dark) {
-        @apply text-gray-500;
+        @apply text-gray-400;
       }
     }
   }

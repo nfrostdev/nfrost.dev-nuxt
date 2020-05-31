@@ -23,6 +23,10 @@
   html {
     font-family: 'Titillium Web', sans-serif;
     @apply font-light;
+
+    @media(prefers-color-scheme: dark) {
+      @apply bg-gray-900 text-gray-200;
+    }
   }
 
   .nf-shadow {

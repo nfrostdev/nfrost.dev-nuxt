@@ -61,6 +61,10 @@
     &__link {
       @apply flex flex-col justify-center items-center leading-none transition duration-200 ease-in-out p-3;
 
+      @media(prefers-color-scheme: dark) {
+        @apply bg-gray-800;
+      }
+
       &:first-child {
         @apply rounded-tl rounded-bl;
       }

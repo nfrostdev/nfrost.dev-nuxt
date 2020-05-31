@@ -17,7 +17,7 @@
 
 <style lang="scss">
   .header {
-    @apply flex justify-center items-center w-full py-6;
+    @apply flex justify-center items-center w-full pt-8;
 
     @media(min-width: 48em) {
       @apply pb-0 pt-16;
@@ -26,6 +26,11 @@
 
   .logo {
     @apply h-8;
+    fill: #003DA5;
+
+    @media (prefers-color-scheme: dark) {
+      fill: #edf2f7;
+    }
 
     @media(min-width: 48em) {
       @apply h-12;

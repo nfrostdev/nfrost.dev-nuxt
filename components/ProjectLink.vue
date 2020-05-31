@@ -57,6 +57,10 @@
     &__image {
       @apply transition-all duration-500 ease-in-out rounded;
 
+      @media(prefers-color-scheme: dark) {
+        filter: brightness(75%);
+      }
+
       &__container {
         @apply mb-4;
 
@@ -67,6 +71,10 @@
 
       &:hover, &:focus {
         box-shadow: 0 0 1rem rgba(#003da5, 0.15), 0 0 0.25rem rgba(#003da5, 0.15);
+
+        @media(prefers-color-scheme: dark) {
+          filter: brightness(100%);
+        }
       }
     }
 
@@ -80,6 +88,10 @@
       &:hover, &:focus {
         .project-link__title {
           @apply text-nf-blue;
+
+          @media(prefers-color-scheme: dark) {
+            @apply text-indigo-300;
+          }
         }
       }
     }
@@ -97,6 +109,10 @@
 
       @media(min-width: 48em) {
         @apply text-2xl my-2;
+      }
+
+      @media(prefers-color-scheme: dark) {
+        @apply text-gray-500;
       }
     }
   }

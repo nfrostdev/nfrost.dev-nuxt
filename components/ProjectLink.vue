@@ -1,22 +1,26 @@
 <template>
   <div class="project-link">
-    <nuxt-link :to="project.uid" class="project-link__image__container">
-      <img :src="project.data.images[0].image.url" class="project-link__image nf-shadow"
-           :alt="project.data.title[0].text + ' Preview'"/>
-    </nuxt-link>
-
-    <div class="project-link__info">
-      <nuxt-link :to="project.uid">
-        <div class="project-link__title">{{ project.data.title[0].text }}</div>
-        <div class="project-link__client">{{ project.data.client.data.name}}</div>
+    <transition name="slide-left" mode="out-in">
+      <nuxt-link :to="project.uid" class="project-link__image__container" v-show="animate">
+        <img :src="project.data.images[0].image.url" class="project-link__image nf-shadow"
+             :alt="project.data.title[0].text + ' Preview'"/>
       </nuxt-link>
+    </transition>
 
-      <div class="technologies">
-        <technology-link v-for="technology in project.data.technologies"
-                         :key="technology.technology.id"
-                         :technology="technology.technology.data"/>
+    <transition name="slide-right" mode="out-in">
+      <div class="project-link__info" v-show="animate">
+        <nuxt-link :to="project.uid">
+          <div class="project-link__title">{{ project.data.title[0].text }}</div>
+          <div class="project-link__client">{{ project.data.client.data.name}}</div>
+        </nuxt-link>
+
+        <div class="technologies">
+          <technology-link v-for="technology in project.data.technologies"
+                           :key="technology.technology.id"
+                           :technology="technology.technology.data"/>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -31,8 +35,13 @@
     props: {
       project: Object
     },
+    data() {
+      return {
+        animate: false
+      }
+    },
     mounted() {
-      console.log(this.project);
+      this.animate = true
     }
   })
 </script>

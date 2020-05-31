@@ -5,7 +5,7 @@
         <font-awesome-icon icon="layer-group"/>
         <div>Portfolio</div>
       </nuxt-link>
-      <a href="#" target="_blank" rel="noopener noreferrer" class="nav__link">
+      <a :href="resume.url" target="_blank" rel="noopener noreferrer" class="nav__link">
         <font-awesome-icon icon="file-alt"/>
         <div>Resume</div>
       </a>
@@ -32,11 +32,10 @@
     },
     async fetch() {
       try {
-        await this.$prismic.api.query(
-          this.$prismic.predicates.at('document.type', 'resume'),
-        ).then((response: { results: null }) => {
-          this.resume = response.results
-        })
+        await this.$prismic.api.getSingle('resume')
+          .then((response: { results: null }) => {
+            this.resume = response.data.document;
+          })
       } catch (e) {
         console.log(e)
       }

@@ -46,7 +46,23 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/prismic'
+    '@nuxtjs/prismic',
+    ['nuxt-fontawesome', {
+      imports: [
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['faLayerGroup', 'faFileAlt']
+        },
+        {
+          set: '@fortawesome/free-brands-svg-icons',
+          icons: ['faGithub']
+        },
+        {
+          set: '@fortawesome/free-regular-svg-icons',
+          icons: ['faEnvelope']
+        },
+      ]
+    }]
   ],
   prismic: {
     // TODO: Figure out dotenv for this.

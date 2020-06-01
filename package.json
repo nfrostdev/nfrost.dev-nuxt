@@ -23,6 +23,7 @@
     "node-sass": "^4.14.1",
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
+    "prismic-dom": "^2.2.3",
     "sass-loader": "^8.0.2"
   },
   "devDependencies": {

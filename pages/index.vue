@@ -12,6 +12,10 @@
   import ProjectLink from "~/components/ProjectLink.vue";
 
   export default Vue.extend({
+    transition: {
+      name: 'fade',
+      mode: 'out-in'
+    },
     components: {
       ProjectLink
     },

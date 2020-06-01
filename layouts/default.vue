@@ -2,7 +2,9 @@
   <div>
     <site-header/>
     <site-navigation/>
-    <nuxt/>
+    <main>
+        <nuxt/>
+    </main>
   </div>
 </template>
 
@@ -31,6 +33,13 @@
 
   .nf-shadow {
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05), 0 0 0.25rem rgba(0, 0, 0, 0.05);
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: all 0.25s ease-out;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 
   .slide-right-enter-active, .slide-right-leave-active {

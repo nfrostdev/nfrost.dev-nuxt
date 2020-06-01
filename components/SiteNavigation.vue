@@ -51,7 +51,7 @@
     @apply fixed bottom-0 w-full flex justify-center items-center py-8 font-normal text-sm;
 
     @media (min-width: 48em) {
-      @apply relative text-base;
+      @apply relative text-base pb-0;
     }
 
     &__wrapper {

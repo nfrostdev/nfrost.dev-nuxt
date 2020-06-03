@@ -8,13 +8,16 @@
   export default Vue.extend({
     props: {
       technology: Object
+    },
+    mounted() {
+      console.log(this.technology);
     }
   })
 </script>
 
 <style lang="scss">
   .technology-link {
-    @apply bg-indigo-200 leading-none p-2 rounded-sm m-1 transition duration-200 ease-in-out text-sm;
+    @apply inline-block bg-indigo-200 leading-none p-2 rounded-sm transition duration-200 ease-in-out text-sm;
 
     @media(prefers-color-scheme: dark) {
       @apply bg-blue-900;

@@ -14,7 +14,7 @@
           <div class="project-link__client">{{ project.data.client.data.name}}</div>
         </nuxt-link>
 
-        <div class="technologies">
+        <div class="technologies space-x-2">
           <technology-link v-for="technology in project.data.technologies"
                            :key="technology.technology.id"
                            :technology="technology.technology.data"/>

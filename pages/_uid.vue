@@ -1,12 +1,14 @@
 <template>
   <div class="project">
-    <prismic-rich-text :field="project.title" class="project__title"/>
+    <div class="project__primary">
+      <div class="project__information">
+        <prismic-rich-text :field="project.title" class="project__title"/>
 
-    <project-attribute label="Client">
-      {{ project.client.data.name }}
-    </project-attribute>
+        <project-attribute label="Client">
+          {{ project.client.data.name }}
+        </project-attribute>
 
-    <project-attribute label="Contributors">
+        <project-attribute label="Contributors">
       <span v-for="(contributor, index) in project.contributors" :key="contributor.contributor.id">
         <!-- TODO: Style these links. -->
         <a v-if="contributor.contributor.data.url" :href="contributor.contributor.data.url" target="_blank"
@@ -14,26 +16,33 @@
         <span v-else>{{ contributor.contributor.data.name }}</span><span
         v-if="index + 1 !== Object.keys(project.contributors).length">, </span>
       </span>
-    </project-attribute>
+        </project-attribute>
 
-    <project-attribute label="Languages">
+        <project-attribute label="Languages">
           <span v-for="(language, index) in project.languages" :key="language.language.id">
             <span>{{ language.language.data.name }}</span><span
             v-if="index + 1 !== Object.keys(project.languages).length">, </span>
           </span>
-    </project-attribute>
+        </project-attribute>
 
-    <project-attribute label="Location">
-      <a :href="project.location">{{ project.location }}</a>
-    </project-attribute>
+        <project-attribute label="Location">
+          <a :href="project.location">{{ project.location }}</a>
+        </project-attribute>
 
-    <project-attribute label="Technologies">
-      <div class="space-x-2 mt-2">
-        <technology-link v-for="technology in project.technologies"
-                         :key="technology.technology.id"
-                         :technology="technology.technology.data"/>
+        <project-attribute label="Technologies">
+          <div class="space-x-2 mt-2">
+            <technology-link v-for="technology in project.technologies"
+                             :key="technology.technology.id"
+                             :technology="technology.technology.data"/>
+          </div>
+        </project-attribute>
       </div>
-    </project-attribute>
+
+      <div class="project__image__container">
+        <img :src="project.images[0].image.url" class="project__image nf-shadow"
+             :alt="project.title[0].text + ' Screenshot'"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,6 +59,11 @@
     components: {
       ProjectAttribute,
       TechnologyLink
+    },
+    data() {
+      return {
+        animate: false
+      }
     },
     // @ts-ignore
     async asyncData({$prismic, error, params}) {
@@ -73,7 +87,7 @@
     @apply max-w-6xl mx-auto p-8;
 
     &__title {
-      @apply text-4xl font-semibold;
+      @apply text-3xl font-semibold;
     }
 
     &__attribute {
@@ -81,6 +95,30 @@
 
       &__label {
         @apply font-semibold mb-1;
+      }
+    }
+
+    &__primary {
+      @apply flex flex-col-reverse justify-start items-start;
+
+      @media(min-width: 48em) {
+        @apply flex-row;
+      }
+    }
+
+    &__information {
+      @apply flex-shrink-0 mt-4;
+
+      @media(min-width: 48em) {
+        @apply flex-row mt-0 mr-8;
+      }
+    }
+
+    &__image {
+      @apply rounded;
+
+      &__container {
+        @apply flex-grow;
       }
     }
   }

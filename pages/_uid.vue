@@ -26,7 +26,7 @@
           </project-attribute>
 
           <project-attribute label="Location" class="location">
-            <a :href="project.location">{{ project.location }}</a>
+            <a :href="project.location" target="_blank" rel="noopener noreferrer">{{ project.location }}</a>
           </project-attribute>
 
           <project-attribute label="Technologies">
@@ -169,7 +169,7 @@
     }
 
     &__details {
-      @apply grid gap-6 mt-8;
+      @apply grid gap-8 mt-8;
 
       @media(min-width: 48rem) {
         @apply grid-cols-3;
@@ -177,6 +177,22 @@
 
       p {
         @apply mt-2;
+      }
+
+      a {
+        @apply text-nf-blue underline font-normal;
+
+        @media(prefers-color-scheme: dark) {
+          @apply text-blue-300;
+        }
+
+        &:hover, &:focus {
+          @apply text-blue-800;
+
+          @media(prefers-color-scheme: dark) {
+            @apply text-blue-200;
+          }
+        }
       }
 
       &__heading {

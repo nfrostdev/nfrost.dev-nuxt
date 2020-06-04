@@ -5,6 +5,9 @@
     <main>
       <nuxt/>
     </main>
+    <footer class="footer">
+      &copy;2012-{{ new Date().getFullYear() }} Nick Frost
+    </footer>
   </div>
 </template>
 
@@ -29,6 +32,10 @@
     @media(prefers-color-scheme: dark) {
       @apply bg-gray-900 text-gray-100;
     }
+  }
+
+  .footer {
+    @apply flex flex-col justify-center items-center text-xs p-8 pb-24;
   }
 
   .nf-shadow {

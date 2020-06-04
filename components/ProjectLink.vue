@@ -2,8 +2,14 @@
   <div class="project-link">
     <transition name="slide-left" mode="out-in">
       <nuxt-link :to="project.uid" class="project-link__image__container" v-show="animate">
-        <img :src="project.data.images[0].image.url" class="project-link__image nf-shadow"
-             :alt="project.data.title[0].text + ' Preview'"/>
+        <picture>
+          <source media="(min-width:2561px)" :srcset="project.data.images[0].image['4k'].url">
+          <source media="(min-width:1921px)" :srcset="project.data.images[0].image['2k'].url">
+          <source media="(min-width:480px)" :srcset="project.data.images[0].image['1080p'].url">
+          <source media="(max-width:480px)" :srcset="project.data.images[0].image['Mobile'].url">
+          <img :src="project.data.images[0].image['Mobile'].url" :alt="project.data.title[0].text + ' Screenshot'"
+               class="project-link__image nf-shadow">
+        </picture>
       </nuxt-link>
     </transition>
 

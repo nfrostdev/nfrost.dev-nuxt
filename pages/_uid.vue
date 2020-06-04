@@ -42,8 +42,13 @@
       <transition name="slide-left" mode="out-in">
         <div v-if="animate" class="project__image__container">
           <a :href="project.images[0].image.url" target="_blank">
-            <img :src="project.images[0].image.url" class="project__image nf-shadow"
-                 :alt="project.title[0].text + ' Screenshot'"/>
+            <picture>
+              <source media="(min-width:2561px)" :srcset="project.images[0].image['4k'].url">
+              <source media="(min-width:1921px)" :srcset="project.images[0].image['2k'].url">
+              <source media="(min-width:480px)" :srcset="project.images[0].image['1080p'].url">
+              <source media="(max-width:480px)" :srcset="project.images[0].image['Mobile'].url">
+              <img :src="project.images[0].image['Mobile'].url" :alt="project.title[0].text + ' Screenshot'" class="project__image nf-shadow">
+            </picture>
           </a>
         </div>
       </transition>

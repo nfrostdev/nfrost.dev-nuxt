@@ -2,7 +2,7 @@
   <div>
     <site-header/>
     <site-navigation/>
-    <main>
+    <main id="main">
       <nuxt/>
     </main>
     <footer class="footer">

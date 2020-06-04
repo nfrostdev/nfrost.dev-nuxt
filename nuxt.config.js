@@ -15,7 +15,10 @@ export default {
     ],
     link: [
       {rel: 'icon', href: '/favicon.svg'},
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap'}
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap'},
+      {rel: 'preconnect', href: 'https://nfrostdev.prismic.io'},
+      {rel: 'preconnect', href: 'https://nfrostdev.cdn.prismic.io'},
+      {rel: 'preconnect', href: 'https://static.cdn.prismic.io'},
     ]
   },
   /*

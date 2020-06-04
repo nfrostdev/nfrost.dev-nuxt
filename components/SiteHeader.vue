@@ -25,7 +25,7 @@
   }
 
   .logo {
-    @apply h-8;
+    @apply w-12;
     fill: #003DA5;
 
     @media (prefers-color-scheme: dark) {
@@ -33,7 +33,7 @@
     }
 
     @media(min-width: 48em) {
-      @apply h-12;
+      @apply w-20;
     }
   }
 </style>

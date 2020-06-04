@@ -62,7 +62,7 @@
       @apply flex flex-col justify-center items-center bg-white leading-none transition duration-200 ease-in-out p-3;
 
       @media(prefers-color-scheme: dark) {
-        @apply bg-gray-700;
+        @apply bg-gray-800;
       }
 
       &:first-child {
@@ -79,6 +79,10 @@
 
       &:hover, &:focus, &.nuxt-link-exact-active {
         @apply bg-nf-blue text-white;
+
+        @media(prefers-color-scheme: dark) {
+          @apply bg-blue-900;
+        }
       }
 
       &:focus {

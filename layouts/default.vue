@@ -32,6 +32,13 @@
     @media(prefers-color-scheme: dark) {
       @apply bg-gray-900 text-gray-100;
     }
+
+    @media (min-width: 1921px) {
+      @apply text-xl;
+    }
+    @media (min-width: 2561px) {
+      @apply text-3xl;
+    }
   }
 
   .footer {

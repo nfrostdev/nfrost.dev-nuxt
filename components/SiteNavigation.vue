@@ -75,7 +75,7 @@
       }
 
       svg {
-        @apply mb-1;
+        @apply mb-1 h-4 w-4;
       }
 
       &:hover, &:focus, &.nuxt-link-exact-active {

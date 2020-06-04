@@ -17,9 +17,6 @@ module.exports = {
       }
     }
   },
-  options: {
-    whitelist: ['svg'],
-  },
   variants: {},
   plugins: []
 }

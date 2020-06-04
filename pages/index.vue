@@ -19,6 +19,12 @@
     components: {
       ProjectLink
     },
+    head: {
+      title: 'Portfolio - Nick Frost',
+      meta: [
+        { hid: 'description', name: 'description', content: 'The portfolio of Nick Frost, a developer in Michigan.' }
+      ]
+    },
     // @ts-ignore
     async asyncData({$prismic, error}) {
       try {

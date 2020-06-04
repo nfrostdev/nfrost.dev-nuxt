@@ -84,6 +84,18 @@
       ProjectAttribute,
       TechnologyLink
     },
+    head() {
+      return {
+        title: this.project.title[0].text + ' - Portfolio - Nick Frost',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.project.short_description
+          }
+        ]
+      }
+    },
     data() {
       return {
         animate: false

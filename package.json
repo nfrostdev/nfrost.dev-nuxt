@@ -1,7 +1,7 @@
 {
   "name": "nfrost.dev-nuxt",
   "version": "1.0.0",
-  "description": "The portfolio of Nick Frost made with Nuxt.js.",
+  "description": "The portfolio of Nick Frost, a developer in Michigan.",
   "author": "Nick Frost",
   "private": true,
   "scripts": {

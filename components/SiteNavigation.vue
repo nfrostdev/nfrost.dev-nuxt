@@ -48,7 +48,7 @@
 
 <style lang="scss">
   .nav {
-    @apply fixed bottom-0 w-full flex justify-center items-center py-8 font-normal text-sm;
+    @apply fixed bottom-0 w-full flex justify-center items-center py-8 font-normal text-sm z-20;
 
     @media (min-width: 48em) {
       @apply relative text-base pb-0;

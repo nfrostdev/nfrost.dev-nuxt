@@ -3,7 +3,7 @@
     <site-header/>
     <site-navigation/>
     <main>
-        <nuxt/>
+      <nuxt/>
     </main>
   </div>
 </template>
@@ -24,7 +24,7 @@
 <style lang="scss">
   html {
     font-family: 'Titillium Web', sans-serif;
-    @apply font-light bg-gray-200 overflow-x-hidden;
+    @apply font-light bg-gray-200;
 
     @media(prefers-color-scheme: dark) {
       @apply bg-gray-900 text-gray-100;
@@ -38,6 +38,7 @@
   .fade-enter-active, .fade-leave-active {
     transition: all 0.25s ease-out;
   }
+
   .fade-enter, .fade-leave-to {
     opacity: 0;
   }
@@ -45,26 +46,32 @@
   .slide-right-enter-active, .slide-right-leave-active {
     transition: all 0.75s ease-out;
   }
+
   .slide-right-enter, .slide-right-leave-to {
     opacity: 0;
   }
+
   .slide-right-enter {
-    transform: translateX(-4rem);
+    transform: translateX(-2rem);
   }
+
   .slide-right-leave-to {
-    transform: translateY(-4rem);
+    transform: translateY(-2rem);
   }
 
   .slide-left-enter-active, .slide-left-leave-active {
     transition: all 0.75s ease-out;
   }
+
   .slide-left-enter, .slide-left-leave-to {
     opacity: 0;
   }
+
   .slide-left-enter {
-    transform: translateX(4rem);
+    transform: translateX(2rem);
   }
+
   .slide-left-leave-to {
-    transform: translateY(4rem);
+    transform: translateY(2rem);
   }
 </style>

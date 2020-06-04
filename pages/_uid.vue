@@ -1,66 +1,72 @@
 <template>
   <div class="project">
     <div class="project__primary">
-      <div class="project__information">
-        <prismic-rich-text :field="project.title" class="project__title"/>
+      <transition name="slide-right" mode="out-in">
+        <div v-if="animate" class="project__information">
+          <prismic-rich-text :field="project.title" class="project__title"/>
 
-        <project-attribute label="Client">
-          {{ project.client.data.name }}
-        </project-attribute>
+          <project-attribute label="Client">
+            {{ project.client.data.name }}
+          </project-attribute>
 
-        <project-attribute label="Contributors">
+          <project-attribute label="Contributors">
       <span v-for="(contributor, index) in project.contributors" :key="contributor.contributor.id" class="contributors">
         <a v-if="contributor.contributor.data.url" :href="contributor.contributor.data.url" target="_blank"
            rel="noopener">{{ contributor.contributor.data.name }}</a>
         <span v-else>{{ contributor.contributor.data.name }}</span><span
         v-if="index + 1 !== Object.keys(project.contributors).length">, </span>
       </span>
-        </project-attribute>
+          </project-attribute>
 
-        <project-attribute label="Languages">
+          <project-attribute label="Languages">
           <span v-for="(language, index) in project.languages" :key="language.language.id">
             <span>{{ language.language.data.name }}</span><span
             v-if="index + 1 !== Object.keys(project.languages).length">, </span>
           </span>
-        </project-attribute>
+          </project-attribute>
 
-        <project-attribute label="Location" class="location">
-          <a :href="project.location">{{ project.location }}</a>
-        </project-attribute>
+          <project-attribute label="Location" class="location">
+            <a :href="project.location">{{ project.location }}</a>
+          </project-attribute>
 
-        <project-attribute label="Technologies">
-          <div class="space-x-2 mt-2">
-            <technology-link v-for="technology in project.technologies"
-                             :key="technology.technology.id"
-                             :technology="technology.technology.data"/>
-          </div>
-        </project-attribute>
-      </div>
+          <project-attribute label="Technologies">
+            <div class="space-x-2 mt-2">
+              <technology-link v-for="technology in project.technologies"
+                               :key="technology.technology.id"
+                               :technology="technology.technology.data"/>
+            </div>
+          </project-attribute>
+        </div>
+      </transition>
 
-      <div class="project__image__container">
-        <a :href="project.images[0].image.url" target="_blank">
-          <img :src="project.images[0].image.url" class="project__image nf-shadow"
-               :alt="project.title[0].text + ' Screenshot'"/>
-        </a>
-      </div>
+      <transition name="slide-left" mode="out-in">
+        <div v-if="animate" class="project__image__container">
+          <a :href="project.images[0].image.url" target="_blank">
+            <img :src="project.images[0].image.url" class="project__image nf-shadow"
+                 :alt="project.title[0].text + ' Screenshot'"/>
+          </a>
+        </div>
+      </transition>
     </div>
 
-    <div class="project__details">
-      <div>
-        <h2 class="project__details__heading">Description</h2>
-        <prismic-rich-text :field="project.description"/>
-      </div>
+    <transition name="slide-left" mode="out-in">
+      <div v-if="animate" class="project__details">
+        <div>
+          <h2 class="project__details__heading">Description</h2>
+          <prismic-rich-text :field="project.description"/>
+        </div>
 
-      <div>
-        <h2 class="project__details__heading">Contributions</h2>
-        <prismic-rich-text :field="project.contributions"/>
-      </div>
+        <div>
+          <h2 class="project__details__heading">Contributions</h2>
+          <prismic-rich-text :field="project.contributions"/>
+        </div>
 
-      <div>
-        <h2 class="project__details__heading">Obstacles</h2>
-        <prismic-rich-text :field="project.obstacles"/>
+        <div>
+          <h2 class="project__details__heading">Obstacles</h2>
+          <prismic-rich-text :field="project.obstacles"/>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -97,6 +103,9 @@
         error({statusCode: 404, message: 'Page not found'})
       }
     },
+    mounted() {
+      this.animate = true
+    }
   })
 </script>
 

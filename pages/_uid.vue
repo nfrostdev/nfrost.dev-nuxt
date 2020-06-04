@@ -9,8 +9,7 @@
         </project-attribute>
 
         <project-attribute label="Contributors">
-      <span v-for="(contributor, index) in project.contributors" :key="contributor.contributor.id">
-        <!-- TODO: Style these links. -->
+      <span v-for="(contributor, index) in project.contributors" :key="contributor.contributor.id" class="contributors">
         <a v-if="contributor.contributor.data.url" :href="contributor.contributor.data.url" target="_blank"
            rel="noopener">{{ contributor.contributor.data.name }}</a>
         <span v-else>{{ contributor.contributor.data.name }}</span><span
@@ -25,7 +24,7 @@
           </span>
         </project-attribute>
 
-        <project-attribute label="Location">
+        <project-attribute label="Location" class="location">
           <a :href="project.location">{{ project.location }}</a>
         </project-attribute>
 
@@ -39,8 +38,27 @@
       </div>
 
       <div class="project__image__container">
-        <img :src="project.images[0].image.url" class="project__image nf-shadow"
-             :alt="project.title[0].text + ' Screenshot'"/>
+        <a :href="project.images[0].image.url" target="_blank">
+          <img :src="project.images[0].image.url" class="project__image nf-shadow"
+               :alt="project.title[0].text + ' Screenshot'"/>
+        </a>
+      </div>
+    </div>
+
+    <div class="project__details">
+      <div>
+        <h2 class="project__details__heading">Description</h2>
+        <prismic-rich-text :field="project.description"/>
+      </div>
+
+      <div>
+        <h2 class="project__details__heading">Contributions</h2>
+        <prismic-rich-text :field="project.contributions"/>
+      </div>
+
+      <div>
+        <h2 class="project__details__heading">Obstacles</h2>
+        <prismic-rich-text :field="project.obstacles"/>
       </div>
     </div>
   </div>
@@ -93,6 +111,24 @@
     &__attribute {
       @apply leading-none mt-4;
 
+      &.contributors, &.location {
+        a {
+          @apply text-nf-blue underline font-normal;
+
+          @media(prefers-color-scheme: dark) {
+            @apply text-blue-300;
+          }
+
+          &:hover, &:focus {
+            @apply text-blue-800;
+
+            @media(prefers-color-scheme: dark) {
+              @apply text-blue-200;
+            }
+          }
+        }
+      }
+
       &__label {
         @apply font-semibold mb-1;
       }
@@ -107,7 +143,7 @@
     }
 
     &__information {
-      @apply flex-shrink-0 mt-4;
+      @apply flex-shrink-0 mt-6;
 
       @media(min-width: 48em) {
         @apply flex-row mt-0 mr-8;
@@ -119,6 +155,22 @@
 
       &__container {
         @apply flex-grow;
+      }
+    }
+
+    &__details {
+      @apply grid gap-6 mt-8;
+
+      @media(min-width: 48rem) {
+        @apply grid-cols-3;
+      }
+
+      p {
+        @apply mt-2;
+      }
+
+      &__heading {
+        @apply font-semibold text-xl leading-none;
       }
     }
   }

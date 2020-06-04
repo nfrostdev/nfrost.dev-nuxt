@@ -41,6 +41,6 @@
 
 <style lang="scss">
   .projects {
-    @apply grid justify-center items-center p-8;
+    @apply grid justify-center items-center p-8 gap-8;
   }
 </style>

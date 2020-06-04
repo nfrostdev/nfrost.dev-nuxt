@@ -30,7 +30,7 @@
           </project-attribute>
 
           <project-attribute label="Technologies">
-            <div class="space-x-2 mt-2">
+            <div class="flex flex-wrap mt-1">
               <technology-link v-for="technology in project.technologies"
                                :key="technology.technology.id"
                                :technology="technology.technology.data"/>
@@ -153,6 +153,7 @@
 
     &__information {
       @apply flex-shrink-0 mt-6;
+      width: 18rem;
 
       @media(min-width: 48em) {
         @apply flex-row mt-0 mr-8;

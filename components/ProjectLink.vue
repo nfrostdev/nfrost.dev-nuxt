@@ -14,7 +14,7 @@
           <div class="project-link__client">{{ project.data.client.data.name}}</div>
         </nuxt-link>
 
-        <div class="technologies space-x-2">
+        <div class="technologies">
           <technology-link v-for="technology in project.data.technologies"
                            :key="technology.technology.id"
                            :technology="technology.technology.data"/>
@@ -118,7 +118,7 @@
   }
 
   .technologies {
-    @apply flex justify-center items-center flex-wrap p-1;
+    @apply flex justify-center items-center flex-wrap p-1 max-w-sm;
 
     @media(min-width: 48em) {
       @apply justify-end;

@@ -14,7 +14,7 @@
 
 <style lang="scss">
   .technology-link {
-    @apply inline-block bg-indigo-200 leading-none p-2 rounded-sm transition duration-200 ease-in-out text-sm;
+    @apply inline-block bg-indigo-200 leading-none p-2 rounded-sm transition duration-200 ease-in-out text-sm m-1;
 
     @media(prefers-color-scheme: dark) {
       @apply bg-blue-900;

@@ -70,7 +70,7 @@
       }
 
       &:hover, &:focus {
-        box-shadow: 0 0 1rem rgba(#003da5, 0.15), 0 0 0.25rem rgba(#003da5, 0.15);
+        box-shadow: 0 0 1rem rgba(#003da5, 0.25), 0 0 0.25rem rgba(#003da5, 0.25);
 
         @media(prefers-color-scheme: dark) {
           filter: brightness(100%);

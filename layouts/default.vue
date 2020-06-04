@@ -46,7 +46,7 @@
   }
 
   .nf-shadow {
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05), 0 0 0.25rem rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1), 0 0 0.25rem rgba(0, 0, 0, 0.1);
   }
 
   .fade-enter-active, .fade-leave-active {

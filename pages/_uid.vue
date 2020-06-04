@@ -49,7 +49,7 @@
       </transition>
     </div>
 
-    <transition name="slide-left" mode="out-in">
+    <transition name="slide-up" mode="out-in">
       <div v-if="animate" class="project__details">
         <div>
           <h2 class="project__details__heading">Description</h2>

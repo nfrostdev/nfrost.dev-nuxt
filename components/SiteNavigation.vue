@@ -1,7 +1,7 @@
 <template>
   <nav aria-label="Primary" class="nav">
+    <a href="#main" class="sr-only">Skip to main content.</a>
     <div class="nav__wrapper nf-shadow">
-      <a href="#main" class="sr-only">Skip to main content.</a>
       <nuxt-link to="/" class="nav__link">
         <font-awesome-icon icon="layer-group"/>
         <div>Portfolio</div>

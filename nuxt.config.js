@@ -48,6 +48,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/prismic',
+    '@nuxtjs/sitemap',
     ['nuxt-fontawesome', {
       imports: [
         {
@@ -91,6 +92,19 @@ export default {
       return Prismic.getApi(endpoint)
         .then(api => api.query(Prismic.Predicates.at('document.type', 'project')))
         .then(response => response.results.map(result => '/' + result.uid));
+    }
+  },
+  sitemap: {
+    hostname: 'https://www.nfrost.dev',
+    routes() {
+      return Prismic.getApi(endpoint)
+        .then(api => api.query(Prismic.Predicates.at('document.type', 'project')))
+        .then(response => response.results.map(result => {
+          return {
+            url: '/' + result.uid,
+            lastmod: result.last_publication_date
+          }
+        }));
     }
   }
 }

@@ -9,8 +9,8 @@
             {{ project.client.data.name }}
           </project-attribute>
 
-          <project-attribute label="Contributors">
-      <span v-for="(contributor, index) in project.contributors" :key="contributor.contributor.id" class="contributors">
+          <project-attribute label="Contributors" class="contributors">
+      <span v-for="(contributor, index) in project.contributors" :key="contributor.contributor.id">
         <a v-if="contributor.contributor.data.url" :href="contributor.contributor.data.url" target="_blank"
            rel="noopener">{{ contributor.contributor.data.name }}</a>
         <span v-else>{{ contributor.contributor.data.name }}</span><span

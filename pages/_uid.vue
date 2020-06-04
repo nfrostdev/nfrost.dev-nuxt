@@ -95,7 +95,6 @@
         const project = (await $prismic.api.getByUID('project', params.uid, {
           fetchLinks: ['client.name', 'contributor.name', 'contributor.url', 'language.name', 'technology.url', 'technology.title']
         })).data
-        console.log(project);
         return {
           project
         }

@@ -13,7 +13,7 @@
         <font-awesome-icon :icon="['fab', 'github']"/>
         <div>Github</div>
       </a>
-      <a href="https://github.com/nfrostdev" target="_blank" rel="noopener noreferrer" class="nav__link">
+      <a href="mailto:nfrost.dev@gmail.com" target="_blank" rel="noopener noreferrer" class="nav__link">
         <font-awesome-icon :icon="['far', 'envelope']"/>
         <div>Contact</div>
       </a>

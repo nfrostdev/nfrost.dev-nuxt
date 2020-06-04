@@ -86,11 +86,13 @@
     },
     head() {
       return {
+        // @ts-ignore
         title: this.project.title[0].text + ' - Portfolio - Nick Frost',
         meta: [
           {
             hid: 'description',
             name: 'description',
+            // @ts-ignore
             content: this.project.short_description
           }
         ]

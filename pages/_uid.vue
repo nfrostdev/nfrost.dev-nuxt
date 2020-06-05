@@ -47,7 +47,7 @@
               <source media="(min-width:1921px)" :srcset="project.images[0].image['2k'].url">
               <source media="(min-width:480px)" :srcset="project.images[0].image['1080p'].url">
               <source media="(max-width:480px)" :srcset="project.images[0].image['Mobile'].url">
-              <img :src="project.images[0].image['Mobile'].url" :alt="project.title[0].text + ' Screenshot'" class="project__image nf-shadow">
+              <img :src="project.images[0].image['Mobile'].url" :alt="project.title[0].text + ' Screenshot'" class="project__image nf-shadow" loading="lazy">
             </picture>
           </a>
         </div>

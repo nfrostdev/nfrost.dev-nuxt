@@ -8,7 +8,7 @@
           <source media="(min-width:480px)" :srcset="project.data.images[0].image['1080p'].url">
           <source media="(max-width:480px)" :srcset="project.data.images[0].image['Mobile'].url">
           <img :src="project.data.images[0].image['Mobile'].url" :alt="project.data.title[0].text + ' Screenshot'"
-               class="project-link__image nf-shadow">
+               class="project-link__image nf-shadow" loading="lazy">
         </picture>
       </nuxt-link>
     </transition>

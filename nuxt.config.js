@@ -15,7 +15,6 @@ export default {
     ],
     link: [
       {rel: 'icon', href: '/favicon.svg'},
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap'},
       {rel: 'preconnect', href: 'https://nfrostdev.prismic.io'},
       {rel: 'preconnect', href: 'https://nfrostdev.cdn.prismic.io'},
       {rel: 'preconnect', href: 'https://static.cdn.prismic.io'},
@@ -46,10 +45,10 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    // '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
+    // '@nuxtjs/dotenv',
     '@nuxtjs/prismic',
     '@nuxtjs/sitemap',
     ['nuxt-fontawesome', {
@@ -70,16 +69,10 @@ export default {
     }]
   ],
   prismic: {
-    // TODO: Figure out dotenv for this.
     endpoint: endpoint,
     linkResolver: '@/plugins/link-resolver',
     htmlSerializer: '@/plugins/html-serializer',
   },
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {},
   /*
   ** Build configuration
   */

@@ -52,6 +52,7 @@ export default {
     // '@nuxtjs/dotenv',
     '@nuxtjs/prismic',
     '@nuxtjs/sitemap',
+    ['@nuxtjs/component-cache', {maxAge: 1000 * 60 * 60}],
     ['nuxt-fontawesome', {
       imports: [
         {

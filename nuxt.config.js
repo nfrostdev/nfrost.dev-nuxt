@@ -18,6 +18,7 @@ export default {
       {rel: 'preconnect', href: 'https://nfrostdev.prismic.io'},
       {rel: 'preconnect', href: 'https://nfrostdev.cdn.prismic.io'},
       {rel: 'preconnect', href: 'https://static.cdn.prismic.io'},
+      {rel: 'preconnect', href: 'https://fonts.googleapis.com'},
     ]
   },
   /*

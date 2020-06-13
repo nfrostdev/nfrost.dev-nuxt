@@ -22,7 +22,12 @@
     head: {
       title: 'Portfolio - Nick Frost',
       meta: [
-        { hid: 'description', name: 'description', content: 'The portfolio of Nick Frost, a developer in Michigan.' }
+        {hid: 'description', name: 'description', content: 'The portfolio of Nick Frost, a developer in Michigan.'},
+        {hid: 'og:title', property: 'og:title', content: 'Portfolio - Nick Frost'},
+        {hid: 'og:site_name', property: 'og:site_name', content: 'www.nfrost.dev'},
+        {hid: 'og:image', property: 'og:image', content: 'https://www.nfrost.dev/favicon.svg'},
+        {hid: 'og:description', property: 'og:description', content: 'The portfolio of Nick Frost, a developer in Michigan.'},
+        {hid: 'apple-mobile-web-app-title', property: 'apple-mobile-web-app-title', content: 'Portfolio - Nick Frost'},
       ]
     },
     // @ts-ignore

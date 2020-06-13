@@ -47,7 +47,8 @@
               <source media="(min-width:1921px)" :srcset="project.images[0].image['2k'].url">
               <source media="(min-width:480px)" :srcset="project.images[0].image['1080p'].url">
               <source media="(max-width:480px)" :srcset="project.images[0].image['Mobile'].url">
-              <img :src="project.images[0].image['Mobile'].url" :alt="project.title[0].text + ' Screenshot'" class="project__image nf-shadow" loading="lazy">
+              <img :src="project.images[0].image['Mobile'].url" :alt="project.title[0].text + ' Screenshot'"
+                   class="project__image nf-shadow" loading="lazy">
             </picture>
           </a>
         </div>
@@ -94,12 +95,16 @@
         // @ts-ignore
         title: this.project.title[0].text + ' - Portfolio - Nick Frost',
         meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            // @ts-ignore
-            content: this.project.short_description
-          }
+          // @ts-ignore
+          {hid: 'description', name: 'description', content: this.project.short_description},
+          // @ts-ignore
+          {hid: 'og:title', name: 'og:title', content: this.project.title[0].text + ' - Portfolio - Nick Frost'},
+          {hid: 'og:site_name', property: 'og:site_name', content: 'www.nfrost.dev'},
+          {hid: 'og:image', property: 'og:image', content: 'https://www.nfrost.dev/favicon.svg'},
+          // @ts-ignore
+          {hid: 'og:description', name: 'og:description', content: this.project.short_description},
+          // @ts-ignore
+          {hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: this.project.title[0].text + ' - Portfolio - Nick Frost'},
         ]
       }
     },

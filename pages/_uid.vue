@@ -100,7 +100,7 @@
           // @ts-ignore
           {hid: 'og:title', name: 'og:title', content: this.project.title[0].text + ' - Portfolio - Nick Frost'},
           {hid: 'og:site_name', property: 'og:site_name', content: 'www.nfrost.dev'},
-          {hid: 'og:image', property: 'og:image', content: 'https://www.nfrost.dev/favicon.svg'},
+          {hid: 'og:image', property: 'og:image', content: 'https://www.nfrost.dev/favicon.png'},
           // @ts-ignore
           {hid: 'og:description', name: 'og:description', content: this.project.short_description},
           // @ts-ignore

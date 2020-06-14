@@ -41,7 +41,7 @@
 
       <transition name="slide-left" mode="out-in">
         <div v-if="animate" class="project__image__container">
-          <a :href="project.images[0].image.url" target="_blank">
+          <a :href="project.images[0].image.url" target="_blank" rel="noopener">
             <picture>
               <source media="(min-width:2561px)" :srcset="project.images[0].image['4k'].url">
               <source media="(min-width:1921px)" :srcset="project.images[0].image['2k'].url">

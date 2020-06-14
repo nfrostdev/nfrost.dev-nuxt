@@ -72,6 +72,7 @@ export default {
   ],
   prismic: {
     endpoint: endpoint,
+    deferLoad: true,
     linkResolver: '@/plugins/link-resolver',
     htmlSerializer: '@/plugins/html-serializer',
   },

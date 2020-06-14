@@ -8,7 +8,7 @@
           <source media="(min-width:480px)" :srcset="project.data.images[0].image['1080p'].url">
           <source media="(max-width:480px)" :srcset="project.data.images[0].image['Mobile'].url">
           <img :src="project.data.images[0].image['Mobile'].url" :alt="project.data.title[0].text + ' Screenshot'"
-               class="project-link__image nf-shadow" loading="lazy">
+               class="project-link__image nf-shadow" loading="lazy" height="480" width="768">
         </picture>
       </nuxt-link>
     </transition>
@@ -62,6 +62,8 @@
 
     &__image {
       @apply transition-all duration-500 ease-in-out rounded;
+      width: auto;
+      height: auto;
 
       @media(prefers-color-scheme: dark) {
         filter: brightness(75%);

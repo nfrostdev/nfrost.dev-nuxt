@@ -3,7 +3,7 @@
     <div class="project__primary">
       <transition name="slide-right" mode="out-in">
         <div v-if="animate" class="project__information">
-          <prismic-rich-text :field="project.title" class="project__title"/>
+          <div v-html="$prismic.asHtml(project.title)" class="project__title"></div>
 
           <project-attribute label="Client">
             {{ project.client.data.name }}
@@ -59,17 +59,17 @@
       <div v-if="animate" class="project__details">
         <div>
           <h2 class="project__details__heading">Description</h2>
-          <prismic-rich-text :field="project.description"/>
+          <div v-html="$prismic.asHtml(project.description)"></div>
         </div>
 
         <div>
           <h2 class="project__details__heading">Contributions</h2>
-          <prismic-rich-text :field="project.contributions"/>
+          <div v-html="$prismic.asHtml(project.contributions)"></div>
         </div>
 
         <div>
           <h2 class="project__details__heading">Obstacles</h2>
-          <prismic-rich-text :field="project.obstacles"/>
+          <div v-html="$prismic.asHtml(project.obstacles)"></div>
         </div>
       </div>
     </transition>
@@ -93,18 +93,18 @@
     head() {
       return {
         // @ts-ignore
-        title: this.project.title[0].text + ' - Portfolio - Nick Frost',
+        title: this.$prismic.asText(this.project.title) + ' - Portfolio - Nick Frost',
         meta: [
           // @ts-ignore
           {hid: 'description', name: 'description', content: this.project.short_description},
           // @ts-ignore
-          {hid: 'og:title', name: 'og:title', content: this.project.title[0].text + ' - Portfolio - Nick Frost'},
+          {hid: 'og:title', name: 'og:title', content: this.$prismic.asText(this.project.title) + ' - Portfolio - Nick Frost'},
           {hid: 'og:site_name', property: 'og:site_name', content: 'www.nfrost.dev'},
           {hid: 'og:image', property: 'og:image', content: 'https://www.nfrost.dev/favicon.png'},
           // @ts-ignore
           {hid: 'og:description', name: 'og:description', content: this.project.short_description},
           // @ts-ignore
-          {hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: this.project.title[0].text + ' - Portfolio - Nick Frost'},
+          {hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: this.$prismic.asText(this.project.title) + ' - Portfolio - Nick Frost'},
         ]
       }
     },

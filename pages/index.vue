@@ -30,7 +30,6 @@
         {hid: 'apple-mobile-web-app-title', property: 'apple-mobile-web-app-title', content: 'Portfolio - Nick Frost'},
       ]
     },
-    // @ts-ignore
     async asyncData({$prismic, error}) {
       try {
         const projects = (await $prismic.api.query(

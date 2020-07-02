@@ -33,8 +33,6 @@
     },
     async fetch() {
       try {
-        // TypeScript doesn't understand what the hell is going on with the global Prismic object.
-        // @ts-ignore
         await this.$prismic.api.getSingle('resume')
           .then((response: { data: { document: null } }) => {
             this.resume = response.data.document;

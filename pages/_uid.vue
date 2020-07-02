@@ -92,18 +92,13 @@
     },
     head() {
       return {
-        // @ts-ignore
         title: this.$prismic.asText(this.project.title) + ' - Portfolio - Nick Frost',
         meta: [
-          // @ts-ignore
           {hid: 'description', name: 'description', content: this.project.short_description},
-          // @ts-ignore
           {hid: 'og:title', name: 'og:title', content: this.$prismic.asText(this.project.title) + ' - Portfolio - Nick Frost'},
           {hid: 'og:site_name', property: 'og:site_name', content: 'www.nfrost.dev'},
           {hid: 'og:image', property: 'og:image', content: 'https://www.nfrost.dev/favicon.png'},
-          // @ts-ignore
           {hid: 'og:description', name: 'og:description', content: this.project.short_description},
-          // @ts-ignore
           {hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: this.$prismic.asText(this.project.title) + ' - Portfolio - Nick Frost'},
         ]
       }
@@ -113,7 +108,6 @@
         animate: false
       }
     },
-    // @ts-ignore
     async asyncData({$prismic, error, params}) {
       try {
         const project = (await $prismic.api.getByUID('project', params.uid, {

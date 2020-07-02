@@ -13,9 +13,7 @@ jobs:
       - name: Install NPM Dependencies
         run: npm install
       - name: Build Site
-        run: npm run generate
-      - name: Optimize SVGs
-        run: sudo npm install -g svgo && svgo -r ./dist
+        run: npm run generate && npm run test
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:

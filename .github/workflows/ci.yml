@@ -12,8 +12,10 @@ jobs:
         uses: actions/setup-node@master
       - name: Install NPM Dependencies
         run: npm install
+      - name: Run Tests
+        run: npm run test
       - name: Build Site
-        run: npm run generate && npm run test
+        run: npm run generate
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:

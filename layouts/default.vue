@@ -59,7 +59,7 @@
   }
 
   .slide-right-enter-active, .slide-right-leave-active {
-    transition: all 0.75s ease-out;
+    transition: all 0.3s ease-out;
   }
 
   .slide-right-enter, .slide-right-leave-to {
@@ -71,7 +71,7 @@
   }
 
   .slide-left-enter-active, .slide-left-leave-active {
-    transition: all 0.75s ease-out;
+    transition: all 0.3s ease-out;
   }
 
   .slide-left-enter, .slide-left-leave-to {
@@ -83,7 +83,7 @@
   }
 
   .slide-up-enter-active, .slide-up-leave-active {
-    transition: all 0.75s ease-out;
+    transition: all 0.3s ease-out;
   }
 
   .slide-up-enter, .slide-up-leave-to {

@@ -2,6 +2,7 @@ const Prismic = require('prismic-javascript')
 const endpoint = 'https://nfrostdev.cdn.prismic.io/api/v2'
 
 export default {
+  target: 'static',
   /*
   ** Headers of the page
   */

@@ -70,6 +70,14 @@ export default {
       ]
     }]
   ],
+  pwa: {
+    manifest: {
+      name: 'Portfolio - Nick Frost',
+      short_name: 'NF Portfolio',
+      theme_color: '#003da5',
+      description: 'The portfolio of Nick Frost, a developer in Michigan.'
+    }
+  },
   prismic: {
     endpoint: endpoint,
     components: false,
